@@ -11,6 +11,7 @@ namespace gamePiece_dotnet
             public bool Frozen { get; set; } = false;
             public string Name { get; set; }
             public string Color { get; set; }
+            Random random = new Random();
 
             public GamePiece(string name, string color)
             {
@@ -34,7 +35,6 @@ namespace gamePiece_dotnet
             {
                 if (Frozen == false)
                 {
-                    Random random = new Random();
                     PositionX = random.Next(0,100);
                     PositionY = random.Next(0,500);
                     return PositionX;
