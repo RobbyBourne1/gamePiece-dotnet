@@ -36,7 +36,7 @@ namespace gamePiece_dotnet
                 {
                     Random random = new Random();
                     PositionX = random.Next(0,100);
-                    PositionY = random.Next(0,100);
+                    PositionY = random.Next(0,500);
                     return PositionX;
                 }
                 else
@@ -52,7 +52,7 @@ namespace gamePiece_dotnet
                 }
                 else
                 {
-                    return $"{Name} {Color} is Frozen and Can't Move.";
+                   return $"{Name} {Color} is Frozen and Can't Move.";
                 }
             }
         }
@@ -66,7 +66,15 @@ namespace gamePiece_dotnet
             piece1.freeze();
             Console.WriteLine(piece1);
 
-            // piece1.unFreeze();
+            piece1.unFreeze();
+
+            piece1.Move();
+            Console.Write(piece1);
+
+            piece1.freeze();
+            Console.WriteLine(piece1);
+
+            piece1.unFreeze();
 
             piece1.Move();
             Console.Write(piece1);
