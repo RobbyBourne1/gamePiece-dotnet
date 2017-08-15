@@ -52,7 +52,14 @@ namespace gamePiece_dotnet
             }
             public override string ToString()
             {
-                return $"{Name} {Color} has moved to X:{PositionX}, Y:{PositionY}.";
+                if (Frozen == false)
+                {
+                   return $"{Name} {Color} has moved to X:{PositionX}, Y:{PositionY}."; 
+                }
+                else
+                {
+                    return $"You are Frozen and Can't Move";
+                }
             }
         }
         static void Main(string[] args)
@@ -65,10 +72,9 @@ namespace gamePiece_dotnet
             Console.WriteLine(piece1);
 
             piece1.freeze();
-            Console.WriteLine("You are frozen and Cant move");
+            Console.WriteLine(piece1);
 
             piece1.unFreeze();
-            Console.WriteLine("You Have Been Unfrozen");
 
             piece1.MoveBack();
             Console.Write(piece1);
