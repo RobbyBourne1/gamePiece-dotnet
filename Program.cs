@@ -12,6 +12,12 @@ namespace gamePiece_dotnet
             public string Name { get; set; }
             public string Color { get; set; }
 
+            public GamePiece(string name, string color)
+            {
+                Name = name;
+                Color = color;
+            }
+
             public Boolean freeze()
             {
                 Frozen = true;
@@ -58,15 +64,13 @@ namespace gamePiece_dotnet
                 }
                 else
                 {
-                    return $"You are Frozen and Can't Move";
+                    return $"{Name} {Color} is Frozen and Can't Move.";
                 }
             }
         }
         static void Main(string[] args)
         {
-            var piece1 = new GamePiece();
-            piece1.Color = "Blue";
-            piece1.Name = "My Boy";
+            var piece1 = new GamePiece("My Boy", "Blue");
 
             piece1.MoveForward();
             Console.WriteLine(piece1);
