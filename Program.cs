@@ -29,26 +29,14 @@ namespace gamePiece_dotnet
                 Frozen = false;
                 return Frozen;
             }
-            public int MoveForward()
-            {
-             if (Frozen == false)
-             {
-                 PositionX++;
-                 PositionY++;
-                 return PositionX;
-             }
-             else
-             {
-                 return PositionX;
-             }
-            }
             
-            public int MoveBack()
+            public int Move()
             {
                 if (Frozen == false)
                 {
-                    PositionX--;
-                    PositionY--;
+                    Random random = new Random();
+                    PositionX = random.Next(0,100);
+                    PositionY = random.Next(0,100);
                     return PositionX;
                 }
                 else
@@ -72,15 +60,15 @@ namespace gamePiece_dotnet
         {
             var piece1 = new GamePiece("My Boy", "Blue");
 
-            piece1.MoveForward();
+            piece1.Move();
             Console.WriteLine(piece1);
 
             piece1.freeze();
             Console.WriteLine(piece1);
 
-            piece1.unFreeze();
+            // piece1.unFreeze();
 
-            piece1.MoveBack();
+            piece1.Move();
             Console.Write(piece1);
         }
     }
